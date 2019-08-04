@@ -26,5 +26,14 @@ pipeline{
                 echo 'Test'
             }
         }
+
+        stage('Email'){
+            steps{
+                emailext attachLog: true,
+                    subject: "PIPELINE Completion ${currentBuild.result}",
+                    body: "PIPELINE Completion body",
+                    recipientProviders: [requestor()]
+            }
+        }
     }
 }
