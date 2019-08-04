@@ -3,22 +3,28 @@ pipeline{
     agent any
 
     stages{
-        stage('Source Checkout'){
-            echo 'Source Checkout'
+        stage('SCM'){
+            steps{
+                echo 'SCM'
+            }
         }
 
-        stage('Install dependencies'){
-            echo 'Install dependencies'
+        stage('Dependencies'){
+            steps{
+                echo 'Install dependencies'
+            }
         }
 
         stage('Test'){
-            echo 'Test Gigz'
+            steps{
+                echo 'Test'
+            }
         }
-        
+
         stage('Deploy'){
-            echo 'Deploy Gigz'
+            steps{
+                echo 'Test'
+            }
         }
     }
-
-
 }
